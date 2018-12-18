@@ -245,7 +245,7 @@ class Action(_AttributeHolder):
     const: Any
     default: Any
     type: Union[Callable[[str], Any], FileType, None]
-    choices: Optional[Iterable[Any]]
+    choices: Union[Iterable[Any],Dict[str,ArgumentParser],None]
     required: bool
     help: Optional[_Text]
     metavar: Union[_Text, Tuple[_Text, ...]]
@@ -257,7 +257,7 @@ class Action(_AttributeHolder):
                  const: Any = ...,
                  default: Any = ...,
                  type: Optional[Union[Callable[[str], _T], FileType]] = ...,
-                 choices: Optional[Iterable[_T]] = ...,
+                 choices: Union[Iterable[_T],Dict[str,ArgumentParser],None] = ...,
                  required: bool = ...,
                  help: Optional[_Text] = ...,
                  metavar: Optional[Union[_Text, Tuple[_Text, ...]]] = ...) -> None: ...
